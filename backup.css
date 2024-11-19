@@ -1,0 +1,230 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Responsive Navigation */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f8d2d2;
+    padding: 2em 1em;
+    text-align: center;
+    color: #0b0b0b;
+}
+.hero img {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.hero h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Services Section */
+.services {
+    background-color: #f5e3e3;
+    padding: 3em 1em;
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.service img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Portfolio Section */
+.portfolio {
+    background-color: #f8d2d2;
+    padding: 3em 1em;
+    color: #131212;
+    text-align: center;
+}
+
+.portfolio h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1em;
+}
+
+/* Contact Form */
+.contact {
+    background-color: #f5e3e3;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Mobile Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .service-container {
+        flex-direction: column;
+    }
+
+    .portfolio-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2, .services h2, .portfolio h2, .contact h2 {
+        font-size: 1.8em;
+    }
+
+    .contact input, .contact button {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+}
+
+
+.flip {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    perspective: 1000px;
+}
+
+.flip .front,
+.flip .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.flip .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.flip .back {
+    transform: rotateY(180deg);
+}
+
+.flip:hover .front {
+    transform: rotateY(180deg);
+}
+
+.flip:hover .back {
+    transform: rotateY(0deg);
+}
+.flip .front {
+    background-size: cover; /* Ensures the background image covers the entire area */
+    background-position: center; /* Centers the background image */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+.flip {
+    height: 300px; /* Adjust this value as needed */
+}
+/* About  Section */
+.about{
+    background-color: #f5e3e3; /* Background color */
+    padding: 3em 1em; /* Padding */
+    text-align: center; /* Centered text */
+}
+
+.about-us h1 {
+    font-size: 1em; /* Adjusted font size for the heading */
+    margin-bottom: 0.5em; /* Space below the heading */
+    font-weight: bold; /* Bold font */
+}
+
+.about-us p {
+    font-size: 1.2em; /* Adjusted font size for paragraph */
+    line-height: 1.5; /* Line height for better readability */
+    color: #333; /* Text color */
+}
+/* Client Reviews Section */
+.client-reviews {
+    background-color: #f5e3e3; /* Background color */
+    padding: 3em 1em; /* Padding */
+    text-align: center; /* Centered text */
+}
+
+.client-reviews h1 {
+    font-size: 1.5em; /* Increased font size for the heading */
+    margin-bottom: 1em; /* Space below the heading */
+    font-weight: bold; /* Bold font */
+    color: #0b0b0b; /* Heading color */
+}
+
+.client-reviews p {
+    font-size: 1.2em; /* Adjusted font size for paragraph */
+    line-height: 1.6; /* Line height for better readability */
+    color: #333; /* Text color */
+    margin-bottom: 1.5em; /* Space below each review */
+}
+
+.client-reviews .review {
+    font-style: italic; /* Italics for review text */
+    margin: 1.5em 0; /* Space around each review */
+    padding: 1em; /* Padding for review block */
+    border-left: 4px solid #0b0b0b; /* Decorative left border */
+    background-color: #fff; /* Background for review */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
